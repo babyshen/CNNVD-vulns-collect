@@ -31,20 +31,20 @@ x_sign = hashlib.sha256(sign_str.encode("utf-8")).hexdigest()
 # 4. 组装请求头 (Header)
 headers = {
     "Content-Type": "application/json",  # 请求体格式为 JSON
-    "X-Appid": APP_ID,  # 系统分配的应用ID
-    "X-Timestamp": timestamp,  # 毫秒级时间戳
-    "X-Nonce": nonce,  # 16位随机字符串
-    "X-Sign": x_sign,  # SHA256 签名值
+    "X-Appid": APP_ID,                   # 系统分配的应用ID
+    "X-Timestamp": timestamp,            # 毫秒级时间戳
+    "X-Nonce": nonce,                    # 16位随机字符串
+    "X-Sign": x_sign,                    # SHA256 签名值
 }
 
 # 5. 组装请求体 (Body) - 获取 XML 漏洞信息的请求参数
 payload = {
     "pageNum": 1,                      # 页码, 默认是1
     "pageSize": 10,                    # 每页数量, 默认是20, 最大值为 2000
-    "publishStartDate": "2026-10-21",  # 发布开始时间
-    "publishEndDate": "2026-10-23",    # 发布结束时间
-    # "updateStartDate": "2026-05-10",   # 更新开始时间
-    # "updateEndDate": "2026-05-15"      # 更新结束时间
+    "publishStartDate": "2026-10-21",  # 发布开始时间, 格式: YYYY-MM-DD
+    "publishEndDate": "2026-10-23",    # 发布结束时间, 格式: YYYY-MM-DD
+    # "updateStartDate": "2026-05-10",   # 更新开始时间, 格式: YYYY-MM-DD
+    # "updateEndDate": "2026-05-15"      # 更新结束时间, 格式: YYYY-MM-DD
 }
 
 # 打印调试信息
