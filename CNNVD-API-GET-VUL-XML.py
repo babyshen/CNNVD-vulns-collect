@@ -1,8 +1,6 @@
 # CNNVD API Python 示例代码
 # CNNVD 实名注册单位通过 API 快捷获取漏洞信息
 # 需要自行替换 APP_ID 和 APP_SECRET 为实际申请的值
-# Ref: CNNVD 官方漏洞 XML 信息获取接口文档
-# 2026-10-26
 
 import hashlib
 import json
