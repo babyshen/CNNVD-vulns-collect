@@ -112,7 +112,7 @@ PAV 详细解释 可参考  [《国家信息安全漏洞库(CNNVD) 网络安全�
 > 个人和企业用户也可通过注册实名认证之后，进行漏洞数据下载。
 
 ### 三、CNNVD-async-download.py 脚本说明
-由于 CNNVD 官方 OpenAPI 返回的 XML 详情下载链接仅有 10 分钟有效期，本项目采用 Python Asyncio 异步高并发架构，实现海量 XML 漏洞详情文件的秒级高速下载，确保链接过期前数据完整落盘。
+由于 CNNVD 官方 OpenAPI 返回的 XML 详情下载链接仅有 10 分钟有效期，本项目采用 Python Asyncio 异步高并发架构，实现海量 XML 漏洞详情文件的秒级高速下载，确保链接过期前数据完整落盘。针对上游脚本 `CNNVD-API-GET-ALL-VUL-XML.py` 生成的本地 JSON 文件进行批量下载。
  
 **核心特性**
 - 异步高并发：基于 asyncio + aiohttp 异步生态，下载速度相比传统单线程提升数十倍。
