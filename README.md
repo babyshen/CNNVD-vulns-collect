@@ -1,14 +1,13 @@
 通过官方API接口进行漏洞信息批量获取
 
-
-
+官方文档：
 [《国家信息安全漏洞库（CNNVD）漏洞XML信息获取接口文档》](https://www.cnnvd.org.cn/frontend/specDocDownload)
 
 如何申请 AppID？
 
 登录 CNNVD 官网[www.cnnvd.org.cn](https://www.cnnvd.org.cn)→ 完成企业实名认证 → 进入“单位中心” →“账号安全” → “OpenAPI 密钥管理” → 申请生成 API 密钥。
 
-
+> 可通过修改脚本中 `publishStartDate` `publishEndDate` `updateStartDate` `updateEndDate` 四个值来获取指定日期的漏洞信息
 
 ### 一、CNNVD-API-GET-VUL-XML.py 脚本说明
 
@@ -40,37 +39,6 @@
 }
 ```
 
-其中 xmlContent 为 XML 文件下载链接，有效期 10 分钟，在有效期内通过该链接下载 XML 文件。
-
-XML 文件内容如下：
-
-可参考 《国家信息安全漏洞库(CNNVD) 网络安全漏洞信息XML描述规范》
-
-```
-<cnnvd publisher="中国国家漏洞库" date="2026-10-23" date_range="2026年" format="增强版">
-<cnnvd_items>
-<cnnvd_id>CNNVD-2026-49113541</cnnvd_id>
-<cve_id>CVE-2026-87949</cve_id>
-<name>Drupal SAML SSO - Service Provider 跨站脚本漏洞</name>
-<vendor>Drupal</vendor>
-<product>SAML SSO - Service Provider</product>
-<vuln_descript>Drupal SAML SSO - Service Provider是Drupal组织的一款为内容管理站点提供SAML单点登录服务提供方能力的身份认证扩展模块。Drupal SAML SSO - Service Provider 0.0.0版本至3.2.0版本存在跨站脚本漏洞，该漏洞源于网页生成期间输入中和不当，可能导致跨站脚本攻击。</vuln_descript>
-<vuln_type>跨站脚本</vuln_type>
-<severity>
-<technicalseverity>低危</technicalseverity>
-<overallseverity>低危</overallseverity>
-</severity>
-<published>2026-10-23</published>
-<modified>2026-10-23</modified>
-<references>
-<reference>
-<url>https://www.drupal.org/sa-contrib-2026-147</url>
-</reference>
-</references>
-<patch_url>https://www.drupal.org/sa-contrib-2026-147</patch_url>
-</cnnvd_items>
-</cnnvd>
-```
 
 ### 二、CNNVD-API-GET-ALL-VUL-XML.py 脚本说明
 
@@ -106,3 +74,36 @@ XML 文件内容如下：
 ]   
 ```
 
+**其中 xmlContent 为 XML 文件下载链接，有效期 10 分钟，在有效期内通过该链接下载 XML 文件。**
+
+XML 文件内容如下：
+
+```
+<cnnvd publisher="中国国家漏洞库" date="2026-10-23" date_range="2026年" format="增强版">
+<cnnvd_items>
+<cnnvd_id>CNNVD-2026-49113541</cnnvd_id>
+<cve_id>CVE-2026-87949</cve_id>
+<name>Drupal SAML SSO - Service Provider 跨站脚本漏洞</name>
+<vendor>Drupal</vendor>
+<product>SAML SSO - Service Provider</product>
+<vuln_descript>Drupal SAML SSO - Service Provider是Drupal组织的一款为内容管理站点提供SAML单点登录服务提供方能力的身份认证扩展模块。Drupal SAML SSO - Service Provider 0.0.0版本至3.2.0版本存在跨站脚本漏洞，该漏洞源于网页生成期间输入中和不当，可能导致跨站脚本攻击。</vuln_descript>
+<vuln_type>跨站脚本</vuln_type>
+<severity>
+<technicalseverity>低危</technicalseverity>
+<overallseverity>低危</overallseverity>
+</severity>
+<published>2026-10-23</published>
+<modified>2026-10-23</modified>
+<references>
+<reference>
+<url>https://www.drupal.org/sa-contrib-2026-147</url>
+</reference>
+</references>
+<patch_url>https://www.drupal.org/sa-contrib-2026-147</patch_url>
+</cnnvd_items>
+</cnnvd>
+```
+
+XML文件解释 可参考 [《国家信息安全漏洞库(CNNVD) 网络安全漏洞信息XML描述规范》](https://www.cnnvd.org.cn/frontend/specDocDownload)
+
+> 个人和企业用户也可通过注册实名认证之后，进行漏洞数据下载。
