@@ -11,7 +11,7 @@ import aiohttp
 JSON_FILE_PATH = r"xxx.json"
 
 # 2. 准备将 XML 文件保存到的目标文件夹
-OUTPUT_DIR = r"c:\Users\xxx\Desktop"
+OUTPUT_DIR = r"D:\xml_files"
 
 # 3. 最大并发限制（建议控制在 10-20 之间，避免触发官方 WAF 封禁 IP）
 MAX_CONCURRENT_REQUESTS = 15
