@@ -103,7 +103,10 @@ XML 文件内容如下：
 </cnnvd_items>
 </cnnvd>
 ```
+> XML 文件包含漏洞编号、CVE 编号、名称、厂商、产品、描述、类型、危害等级（技术分级和综合分级）、发布时间、参考链接、补丁地址等信息，部分漏洞还包含PAV信息。
 
-XML文件解释 可参考 [《国家信息安全漏洞库(CNNVD) 网络安全漏洞信息XML描述规范》](https://www.cnnvd.org.cn/frontend/specDocDownload)
+XML 文件详细解释 可参考 [《国家信息安全漏洞库(CNNVD) 网络安全漏洞信息XML描述规范》](https://www.cnnvd.org.cn/frontend/specDocDownload)
+
+PAV 详细解释 可参考  [《国家信息安全漏洞库(CNNVD) 网络安全受漏洞影响产品描述规范》](https://www.cnnvd.org.cn/frontend/specDocDownload)
 
 > 个人和企业用户也可通过注册实名认证之后，进行漏洞数据下载。
