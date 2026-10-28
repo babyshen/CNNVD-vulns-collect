@@ -54,14 +54,14 @@ payload = {
 
 # 6. 发送 POST 请求
 try:
-  response = requests.post(URL, json=payload, headers=headers, timeout=10)
-  # print("\n--- 响应结果 ---")
-  # print("状态码:", response.status_code)
+    response = requests.post(URL, json=payload, headers=headers, timeout=10)
+    # print("\n--- 响应结果 ---")
+    # print("状态码:", response.status_code)
 
-  # 使用 json.dumps 美化输出响应数据
-  pretty_data = json.dumps(
-      response.json(), indent=4, ensure_ascii=False
-  )
-  print("响应数据:\n", pretty_data)
+    # 使用 json.dumps 美化输出响应数据
+    pretty_data = json.dumps(
+        response.json(), indent=4, ensure_ascii=False
+    )
+    print("响应数据:\n", pretty_data)
 except Exception as e:
-  print("请求发生错误:", e)
+    print("请求发生错误:", e)
