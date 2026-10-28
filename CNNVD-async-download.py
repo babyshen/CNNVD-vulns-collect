@@ -1,3 +1,13 @@
+# 由于 CNNVD 官方 OpenAPI 返回的 XML 详情下载链接仅有 10 分钟有效期，本项目采用 Python Asyncio 异步高并发架构，实现海量 XML 漏洞详情文件的秒级高速下载，确保链接过期前数据完整落盘。针对上游脚本 `CNNVD-API-GET-ALL-VUL-XML.py` 生成的本地 JSON 文件进行批量下载。
+ 
+# **核心特性**
+# - 异步高并发：基于 asyncio + aiohttp 异步生态，下载速度相比传统单线程提升数十倍。
+# - 智能并发控制：内置 Semaphore 信号量机制，严格限制并发数，防止因请求过猛触发官方防火墙（WAF）封禁 IP。
+# - 断点续传/防重复：自动检测本地已下载文件，存在则直接跳过，节省企业带宽与接口调用额度。
+# - 现代兼容性：代码已针对最新 Python 异步标准进行优化，无任何 Deprecated（弃用）警告。
+#
+# 修改 JSON_FILE_PATH 和 OUTPUT_DIR 两个变量为对应值
+
 import asyncio
 import json
 import os
